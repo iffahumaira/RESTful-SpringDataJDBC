@@ -29,6 +29,8 @@ public class FoodServiceImpl implements FoodService{
         Food f = foodRepository.findById(food.getId()).get();
         f.setMenu(food.getMenu());
         f.setDescription(food.getDescription());
+        f.setQuantity(food.getQuantity());
+        f.setPrice(food.getPrice());
 
         //im trying to loop over food and find null value in field. If it is null, so it will take the existing
         //value for that field.
@@ -47,23 +49,23 @@ public class FoodServiceImpl implements FoodService{
     }
 
     @Override
-    public void deleteById(Food food) {
-        foodRepository.deleteById(food.getId());
+    public void deleteById(Integer id) {
+        foodRepository.deleteById(id);
     }
 
     @Override
     public List<Food> findAll() {
 
-        var fl = foodRepository.findAll();
+//        var fl = foodRepository.findAll(); //just return this with list casting
+//
+//        var foodList = new ArrayList<Food>();
+//        fl.forEach(e -> foodList.add(e));
 
-        var foodList = new ArrayList<Food>();
-        fl.forEach(e -> foodList.add(e));
-
-        return foodList;
+        return (List<Food>) foodRepository.findAll();
     }
 
     @Override
-    public Optional<Food> findById(Food food) {
-        return foodRepository.findById(food.getId());
+    public Food findById(Integer id) {
+        return foodRepository.findById(id).get();
     }
 }

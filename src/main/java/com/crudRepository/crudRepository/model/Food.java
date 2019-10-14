@@ -4,7 +4,9 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
-import org.springframework.data.annotation.Id;
+//import org.springframework.data.annotation.Id;
+// Cannot use this because it will lead to, No identifier specified for entity: com.crudRepository.crudRepository.model.Food
+import javax.persistence.Id;
 
 import javax.persistence.*;
 

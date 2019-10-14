@@ -9,38 +9,36 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/v1/food/")
+@RequestMapping("/v1/")
 public class FoodController {
 
     @Autowired
     private FoodService foodService;
 
-    @GetMapping("/findAll")
-    @ResponseBody
+    @GetMapping("food")
     public List<Food> findAll (){
         return foodService.findAll();
     }
 
-    @GetMapping("/findById")
-    @ResponseBody
-    public Optional<Food> findById (@RequestBody Food food){
-        return foodService.findById(food);
+    @GetMapping("food/{id}")
+    public Food findById (@PathVariable("id") Integer id){
+        return foodService.findById(id);
     }
 
-    @PutMapping("/updateById")
+    @PutMapping("food")
     @ResponseBody
     public Food updateById (@RequestBody Food food){
         Food updateFood = foodService.updateMenu(food);
         return updateFood;
     }
 
-    @DeleteMapping("/deleteById")
+    @DeleteMapping("food/{id}")
     @ResponseBody
-    public void deleteById(@RequestBody Food food){
-         foodService.deleteById(food);
+    public void deleteById(@PathVariable("id") Integer id){
+         foodService.deleteById(id);
     }
 
-    @PostMapping("/addMenu")
+    @PostMapping("food")
     @ResponseBody
     public Food addMenu(@RequestBody Food food){
         return foodService.addMEnu(food);

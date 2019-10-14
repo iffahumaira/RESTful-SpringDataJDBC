@@ -9,8 +9,8 @@ public interface FoodService {
 
     Food addMEnu(Food food);
     Food updateMenu(Food food);
-    void deleteById(Food food);
+    void deleteById(Integer id);
 
     List<Food> findAll();
-    Optional<Food> findById(Food food);
+    Food findById(Integer id);
 }
