@@ -1,6 +1,6 @@
-package com.crudRepository.crudRepository.repository;
+package com.crudRepository.repository;
 
-import com.crudRepository.crudRepository.model.Food;
+import com.crudRepository.model.Food;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

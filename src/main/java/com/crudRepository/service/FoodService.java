@@ -1,6 +1,6 @@
-package com.crudRepository.crudRepository.service;
+package com.crudRepository.service;
 
-import com.crudRepository.crudRepository.model.Food;
+import com.crudRepository.model.Food;
 
 import java.util.List;
 

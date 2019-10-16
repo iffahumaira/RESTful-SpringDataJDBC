@@ -1,19 +1,14 @@
-package com.crudRepository.crudRepository.controller;
+package com.crudRepository.controller;
 
-import com.crudRepository.crudRepository.model.Food;
-import com.crudRepository.crudRepository.service.FoodService;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.crudRepository.model.Food;
+import com.crudRepository.service.FoodService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/v1/")
 public class FoodController {
-
-//    @Autowired
-//    private FoodService foodService;
 
     FoodService foodService;
     //Constructor injection
