@@ -32,6 +32,15 @@ public class FoodServiceImpl implements FoodService{
         f.setQuantity(food.getQuantity());
         f.setPrice(food.getPrice());
 
+//        if (food.getMenu().equals(null)){
+//        }
+//        if (food.getDescription().equals(null)){
+//        }
+//        if (food.getQuantity() == 0){
+//        }
+//        if (food.getPrice() == 0){
+//        }
+
         //im trying to loop over food and find null value in field. If it is null, so it will take the existing
         //value for that field.
 

@@ -12,13 +12,19 @@ import java.util.Optional;
 @RequestMapping("/v1/")
 public class FoodController {
 
-    @Autowired
-    private FoodService foodService;
+//    @Autowired
+//    private FoodService foodService;
 
-    @GetMapping("food")
-    public List<Food> findAll (){
-        return foodService.findAll();
+    FoodService foodService;
+    //Constructor injection
+    public FoodController(FoodService foodService) {
+        this.foodService = foodService;
     }
+
+        @GetMapping("food")
+        public List<Food> findAll (){
+            return foodService.findAll();
+        }
 
     @GetMapping("food/{id}")
     public Food findById (@PathVariable("id") Integer id){

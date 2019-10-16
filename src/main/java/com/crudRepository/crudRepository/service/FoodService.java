@@ -3,7 +3,6 @@ package com.crudRepository.crudRepository.service;
 import com.crudRepository.crudRepository.model.Food;
 
 import java.util.List;
-import java.util.Optional;
 
 public interface FoodService {
 
